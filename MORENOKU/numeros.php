@@ -24,14 +24,15 @@
 					$inf.='<th>Indicativo</th>';
 					$inf.='<th>Bloque</th>';
 					$inf.='<th>Resolución</th>';
-					$inf.='<th>A utilizar</th>';
+					$inf.='<th>A utilizar1</th>';
+					$inf.='<th>A utilizar2</th>';
 					$inf.='<th>Identificación</th>';
 					$inf.='<th>Fecha</th>';
 					$inf.='<th>Reemplazar por</th>';
 					$inf.='<th>Carácteres</th>';
 				$inf.='</tr>';
 			$inf.='</thead>';
-			$cant=15;
+			$cant=16;
 			$_SESSION['Cant_Col'] = $cant;
 			$inf.='<tbody>';
 				$sql="SELECT n.id_num, n.telefono, r.empresa, r.servicio,
@@ -59,6 +60,10 @@
 								$inf.='<td>';
 									$inf.='+'.str_replace('$', '', $reemplazar_por).substr($telefono, -2);
 								$inf.='</td>';
+									  $inf.='<td>';
+									    $inf.='-'.str_replace('$', '', $reemplazar_por).substr($telefono, -2);
+									  $inf.='</td>';
+
 								$inf.='<td>'.$row['ident'].'</td>';
 								$inf.='<td>'.$row['fecha'].'</td>';
 								$inf.='<td>'.$row['reemplazar_por'].'</td>';
@@ -101,7 +106,7 @@
 					$inf.='<th>Identificación</th>';
 				$inf.='</tr>';
 			$inf.='</thead>';
-			$cant=15;
+			$cant=16;
 			$_SESSION['Cant_Col'] = $cant;
 			$inf.='<tbody>';
 				//$sql="SELECT * FROM ".$this->table." ORDER BY id_num DESC; ";
