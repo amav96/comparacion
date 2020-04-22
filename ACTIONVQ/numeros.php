@@ -52,13 +52,22 @@
      
                 while (($data = fgetcsv($handle, 1000, ";")) !== FALSE)
                 {
-                	$telefono = $data[0];
+                	
+                    $telefono =$data[0];
                 	$buscar = substr($data[0],0,8);
                 	$buscar_dos = substr($data[0],0,3).'15'.substr($data[0],3,3);
-                	$ident = $data[1];
+                    $ident = $data[1];
+                    
+                    
+                    if(strlen($telefono) > 10){
+                        $estado = 0;
+                      }else{
+                        $estado = 1;
+                      }
+                    
 
-                    $sql = "INSERT INTO ".$cl1." (telefono, buscar, buscar_dos, ident)
-                     VALUES ('".$telefono."', '".$buscar."', '".$buscar_dos."', '".$ident."') ;";
+                    $sql = "INSERT INTO ".$cl1." (telefono, buscar, buscar_dos, ident, estado) VALUES
+                     ('".$telefono."', '".$buscar."', '".$buscar_dos."', '".$ident."', '".$estado."') ;";
                     mysqli_query(conect01(),$sql);
                     $row++;
                 }
