@@ -21,10 +21,10 @@
 					
 				$inf.='</tr>';
 			$inf.='</thead>';
-			$cant=15;
+			$cant=57;
 			$_SESSION['Cant_Col'] = $cant;
 			$inf.='<tbody>';
-				$sql="SELECT id_num, telefono, buscar, estado, campo, campito FROM numeros; ";
+				$sql="SELECT * FROM numeros; ";
 				$res = mysqli_query($c1,$sql) or $_SESSION['Mysqli_Error'] = (mysqli_error($c1));
 				if ($res) {
 					if ($res->num_rows > 0) {
@@ -33,12 +33,12 @@
 							
 							$inf.='<tr>';
 								//$inf.='<td>'.$n.'</td>';
-								$inf.='<td>'.$row['id_num'].'</td>';
-								$inf.='<td>'.$row['telefono'].'</td>';
-								$inf.='<td>'.$row['buscar'].'</td>';
-								$inf.='<td>'.$row['estado'].'</td>';
-								$inf.='<td>'.$row['campo'].'</td>';
-								$inf.='<td>'.$row['campito'].'</td>';
+								$inf.='<td>'.$row['nrocliente'].'</td>';
+								$inf.='<td>'.$row['nrowo'].'</td>';
+								$inf.='<td>'.$row['wotype'].'</td>';
+								$inf.='<td>'.$row['razoncreacion'].'</td>';
+								$inf.='<td>'.$row['servicecreacion'].'</td>';
+								$inf.='<td>'.$row['subtype'].'</td>';
 							
 							$inf.='</tr>';
 
