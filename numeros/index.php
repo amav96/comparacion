@@ -3,7 +3,8 @@
 	$rut='../';
 	require_once($rut.'const.php');
   $direc='numeros.php';
-	$pagina='Números';
+  $pagina='Números';
+  
 ?>
 <!DOCTYPE html>
 <html>
