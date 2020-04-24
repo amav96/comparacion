@@ -1,5 +1,23 @@
 <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>  
+  
+  <?php 
+  require_once('../select/directv1.php');
+  require_once('../select/directv2.php');
+  require_once('../select/directv3.php');
+  require_once('../select/antina1.php');
+  require_once('../select/antina2.php');
+  require_once('../select/antina3.php');
+  require_once('../select/intv1.php');
+  require_once('../select/intv2.php');
+  require_once('../select/intv3.php');
+  ?>
+  
+  
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -171,7 +189,7 @@
               <p>
                 DIRECTV
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -179,18 +197,30 @@
                 <a href="<?= URL; ?>tabladirectv1/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 1</p>
-                </a>
+                  
+                  <input type="hidden" value="1" id="directv1" name="directv1">
+                   <br>
+			               <div id="directvlista1"></div>
+              </a>
               </li>
+              
                <li class="nav-item">
                 <a href="<?= URL; ?>tabladirectv2/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="directv2" name="directv2">
+                   <br>
+			               <div id="directvlista2"></div>
+                  
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= URL; ?>tabladirectv3/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="directv3" name="directv3">
+                   <br>
+			               <div id="directvlista3"></div>
                 </a>
               </li>
             </ul>
@@ -211,18 +241,27 @@
                 <a href="<?= URL; ?>tablaantina1/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="antina1" name="antina1">
+                   <br>
+			               <div id="antinalista1"></div>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="<?= URL; ?>tablaantina2/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="antina2" name="antina2">
+                   <br>
+			               <div id="antinalista2"></div>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= URL; ?>tablaantina3/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="antina3" name="antina3">
+                   <br>
+			               <div id="antinalista3"></div>
                 </a>
               </li>
             </ul>
@@ -240,18 +279,27 @@
                 <a href="<?= URL; ?>tablaintv1/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="intv1" name="intv1">
+                   <br>
+			               <div id="intvlista1"></div>
                 </a>
               </li>
                <li class="nav-item">
                 <a href="<?= URL; ?>tablaintv2/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="intv2" name="intv2">
+                   <br>
+			               <div id="intvlista2"></div>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?= URL; ?>tablaintv3/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="intv3" name="intv3">
+                   <br>
+			               <div id="intvlista3"></div>
                 </a>
               </li>
             </ul>
@@ -612,3 +660,4 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+ 
