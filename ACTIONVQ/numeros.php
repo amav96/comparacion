@@ -31,7 +31,7 @@
     if (isset($_REQUEST['importar'])) {
         session_start();
         require('../Const.php');
-        include($ru2.DIRMOR.'funct_conc.php');
+        include('../MORENOKU/funct_conc.php');
 
         if (isset($_POST['importar'])) {
             //conexiones, conexiones everywhere
@@ -53,11 +53,12 @@
                 while (($data = fgetcsv($handle, 1000, ";")) !== FALSE)
                 {
                     
-                    $campo0 = $data[0];
-                    $campo1 = $data[1];
+                    
+                    $campo1 = $data[10];  
+                    $campo2 =md5($data[10]);
                 	
                 	
-$sql = "INSERT INTO ".$cl1." (identificacion,numeros) VALUES ('".$campo0."','".$campo1."') ;";                    
+$sql = "INSERT INTO sms (identificacion,url) VALUES ('".$campo1."','".$campo2."') ;";                    
 mysqli_query(conect01(),$sql);
 
                     $row++;
