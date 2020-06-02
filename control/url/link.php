@@ -13,7 +13,16 @@ function acortarurl($url){
     }
 }
 
-$variable=($_SESSION['identificacion']['identificacion']);
+session_start();
+/*echo "<pre>" ; 
+print_r ($_SESSION["identificacion"]);
+exit;*/
+foreach ($_SESSION["identificacion"] as $key => $value)
+{
+    echo $value["identificacion"];
+}
+$variable=$value["identificacion"];
+ print_r ($_SESSION["identificacion"]);
 $url_larga = "http://localhost/cliente/vistas/sms.php?iden=$variable&submit=send";
 $url_corta = acortarurl($url_larga);
 

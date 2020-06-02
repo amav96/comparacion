@@ -25,11 +25,18 @@
 
 				if ($res) {
 					if ($res->num_rows > 0) {
-						
+						$contador = 0;
 						while ($row = mysqli_fetch_array($res)) {
 							require_once('../control/url/link.php');
-							$var =$row['identificacion'];
-							$_SESSION["identificacion"]=$row;
+							
+							//echo $row['identificacion'];
+							
+							
+                      $_SESSION['identificacion'][$contador]=$row;
+							 $contador++;
+							 
+							
+							
                          $inf.='<tr>';
                          $inf.='<td>'.$row['identificacion'].'</td>';
                         
