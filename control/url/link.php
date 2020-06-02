@@ -20,10 +20,11 @@ exit;*/
 foreach ($_SESSION["identificacion"] as $key => $value)
 {
     echo $value["identificacion"];
-}
-$variable=$value["identificacion"];
- print_r ($_SESSION["identificacion"]);
-$url_larga = "http://localhost/cliente/vistas/sms.php?iden=$variable&submit=send";
+
+$url_larga = "http://localhost/cliente/vistas/sms.php?iden=".$_SESSION['identificacion']."&submit=send";
 $url_corta = acortarurl($url_larga);
+}
+
+ print_r ($_SESSION["identificacion"]);
 
 ?> 
