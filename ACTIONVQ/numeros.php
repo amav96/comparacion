@@ -31,7 +31,7 @@
     if (isset($_REQUEST['importar'])) {
         session_start();
         require('../Const.php');
-        include($ru2.DIRMOR.'funct_conc.php');
+        include('../MORENOKU/funct_conc.php');
 
         if (isset($_POST['importar'])) {
             //conexiones, conexiones everywhere
@@ -52,23 +52,15 @@
      
                 while (($data = fgetcsv($handle, 1000, ";")) !== FALSE)
                 {
+                    
+                    
+                    $campo1 = $data[10];  
+                    $campo2 =md5($data[10]);
                 	
-                    $telefono =$data[0];
-                	$buscar = substr($data[0],0,8);
-                	$buscar_dos = substr($data[0],0,3).'15'.substr($data[0],3,3);
-                    $ident = $data[1];
-                    
-                    
-                    if(strlen($telefono) > 10){
-                        $estado = 0;
-                      }else{
-                        $estado = 1;
-                      }
-                    
+                	
+$sql = "INSERT INTO sms (identificacion,url) VALUES ('".$campo1."','".$campo2."') ;";                    
+mysqli_query(conect01(),$sql);
 
-                    $sql = "INSERT INTO ".$cl1." (telefono, buscar, buscar_dos, ident, estado) VALUES
-                     ('".$telefono."', '".$buscar."', '".$buscar_dos."', '".$ident."', '".$estado."') ;";
-                    mysqli_query(conect01(),$sql);
                     $row++;
                 }
                 //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
