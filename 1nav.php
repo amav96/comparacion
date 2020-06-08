@@ -1,5 +1,35 @@
 <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>  
+  
+  <?php require_once('select/directv1.php');?>
+  <?php require_once('select/directv2.php');?>
+  <?php require_once('select/directv3.php');?>
+  <?php require_once('select/antina1.php');?>
+  <?php require_once('select/antina2.php');?>
+  <?php require_once('select/antina3.php');?>
+  <?php require_once('select/intv1.php');?>
+  <?php require_once('select/intv2.php');?>
+  <?php require_once('select/intv3.php');?>
+  <?php require_once('select/metrotel1.php');?>
+  <?php require_once('select/metrotel2.php');?>
+  <?php require_once('select/metrotel3.php');?>
+  <?php require_once('select/iplan1.php');?>
+  <?php require_once('select/iplan2.php');?>
+  <?php require_once('select/iplan3.php');?>
+  <?php require_once('select/lapos1.php');?>
+  <?php require_once('select/lapos2.php');?>
+  <?php require_once('select/lapos3.php');?>
+  <?php require_once('select/cablevision1.php');?>
+  <?php require_once('select/cablevision2.php');?>
+  <?php require_once('select/cablevision3.php');?>
+  
+  
+  
+  
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -152,7 +182,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Inicio
-                <span class="right badge badge-danger">New</span>
+                <span class="right badge badge-danger"></span>
               </p>
             </a>
           </li>
@@ -160,154 +190,288 @@
             <a href="../../vistas/data_new/index.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Números
-                <span class="right badge badge-danger">New</span>
+                Administración
+                <span class="right badge badge-danger">Gestión</span>
               </p>
             </a>
           </li>
-          <!--<li class="nav-item has-treeview">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Layout Options
+                DIRECTV
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right"></span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="<?= URL; ?>tabladirectv1/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
+                  <p>TABLA 1</p>
+                  
+                  <input type="hidden" value="1" id="directv1" name="directv1">
+                   <br>
+			               <div id="directvlista1"></div>
+              </a>
+              </li>
+              
+               <li class="nav-item">
+                <a href="<?= URL; ?>tabladirectv2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="directv2" name="directv2">
+                   <br>
+			               <div id="directvlista2"></div>
+                  
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="<?= URL; ?>tabladirectv3/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/fixed-footer.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="directv3" name="directv3">
+                   <br>
+			               <div id="directvlista3"></div>
                 </a>
               </li>
             </ul>
           </li>
+            
+          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-copy"></i>
               <p>
-                Charts
+                ANTINA
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="<?= URL; ?>tablaantina1/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
+                  <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="antina1" name="antina1">
+                   <br>
+			               <div id="antinalista1"></div>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="<?= URL; ?>tablaantina2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="antina2" name="antina2">
+                   <br>
+			               <div id="antinalista2"></div>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="<?= URL; ?>tablaantina3/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="antina3" name="antina3">
+                   <br>
+			               <div id="antinalista3"></div>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-copy"></i>
               <p>
-                UI Elements
+                INTV
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?= URL; ?>tablaintv1/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
+                  <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="intv1" name="intv1">
+                   <br>
+			               <div id="intvlista1"></div>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="<?= URL; ?>tablaintv2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="intv2" name="intv2">
+                   <br>
+			               <div id="intvlista2"></div>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="<?= URL; ?>tablaintv3/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Buttons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/sliders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sliders</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/modals.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Modals & Alerts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/navbar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Navbar & Tabs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/timeline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Timeline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/UI/ribbons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ribbons</p>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="intv3" name="intv3">
+                   <br>
+			               <div id="intvlista3"></div>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                METROTEL
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablametrotel1/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="metrotel1" name="metrotel1">
+                   <br>
+			               <div id="metrotellista1"></div>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="<?= URL; ?>tablametrotel2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="metrotel2" name="metrotel2">
+                   <br>
+			               <div id="metrotellista2"></div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablametrotel3/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="metrotel3" name="metrotel3">
+                   <br>
+			               <div id="metrotellista3"></div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                IPLAN
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablaiplan1/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="iplan1" name="iplan1">
+                   <br>
+			               <div id="iplanlista1"></div>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="<?= URL; ?>tablaiplan2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="iplan2" name="iplan2">
+                   <br>
+			               <div id="iplanlista2"></div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablaiplan3/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="iplan3" name="iplan3">
+                   <br>
+			               <div id="iplanlista3"></div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                LAPOS
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablalapos1/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="lapos1" name="lapos1">
+                   <br>
+			               <div id="laposlista1"></div>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="<?= URL; ?>tablalapos2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="lapos2" name="lapos2">
+                   <br>
+			               <div id="laposlista2"></div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablalapos3/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="lapos3" name="lapos3">
+                   <br>
+			               <div id="laposlista3"></div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                CABLEVISION
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablacablevision1/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 1</p>
+                  <input type="hidden" value="1" id="cablevision1" name="cablevision1">
+                   <br>
+			               <div id="cablevisionlista1"></div>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="<?= URL; ?>tablacablevision2/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 2</p>
+                  <input type="hidden" value="1" id="cablevision2" name="cablevision2">
+                   <br>
+			               <div id="cablevisionlista2"></div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= URL; ?>tablacablevision3/" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>TABLA 3</p>
+                  <input type="hidden" value="1" id="cablevision3" name="cablevision3">
+                   <br>
+			               <div id="cablevisionlista3"></div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          
+          <!--<li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
@@ -342,6 +506,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
@@ -477,6 +642,7 @@
               </li>
             </ul>
           </li>
+          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
@@ -652,8 +818,11 @@
             </a>
           </li>-->
         </ul>
+        
+        
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+ 
