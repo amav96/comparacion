@@ -157,7 +157,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= URL; ?>numeros/" class="nav-link">
+            <a href="../../vistas/data_new/index.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Números

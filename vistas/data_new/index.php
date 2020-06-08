@@ -1,25 +1,25 @@
 <?php
 	session_start();
 	$rut='../';
-	require_once($rut.'const.php');
+	require_once('../../const.php');
   $direc='numeros.php';
 	$pagina='Números';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?= $pagina.TIT; ?></title>
-	<?php include_once($rut.'1stylesDAT.php');  ?>
+	<title> | Express</title>
+	<?php include_once('../../1stylesDAT.php');  ?>
   <?php
     $inf = null;
-    require_once($rut.DIRACT.$direc);
+    require_once('../../control/data_new/insertar.php');
     $inf = index($rut);
   ?>
 </head>
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed">
 <div class="wrapper">
 
-	<?php include_once($rut.'1nav.php');  ?>
+	<?php include_once('../../1nav.php');  ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-right">
                     <div class="breadcomb-report">
-                      <?php include_once($rut.'export.php'); ?>
+                      <?php include_once('../../modelo/data_new/export.php'); ?>
                         <div class="btn-group">
                             <button type="button" class="btn btn-warning"><i class="fas fa-file-import"></i> Importar</button>
                             <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -123,14 +123,14 @@
     </section>
   </div>
   
-	<?php include_once($rut.'4footer.php');  ?>
+	<?php include_once('../../4footer.php');  ?>
 
-	<?php include_once($rut.'2javaDAT.php');  ?>
+	<?php include_once('../../2javaDAT.php');  ?>
 
   <!-- Modal -->
   <div class="modal fade" id="importar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <form method="post" enctype="multipart/form-data" action="<?= ACTI.$direc; ?>">
+      <form method="post" enctype="multipart/form-data" action="../../control/data_new/insertar.php">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Importar Números</h5>

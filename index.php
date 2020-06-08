@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$rut='./';
-	require_once($rut.'const.php');
+	require_once('const.php');
 	$pagina='Inicio';
 ?>
 <!DOCTYPE html>
@@ -626,9 +626,9 @@
     <!-- /.content -->
   </div>
   
-	<?php include_once($rut.'4footer.php');  ?>
+	<?php include_once('../4footer.php');  ?>
 
-	<?php include_once($rut.'2java.php');  ?>
+	<?php include_once('../2java.php');  ?>
 </div>
 </body>
 </html>
