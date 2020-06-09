@@ -626,9 +626,9 @@
     <!-- /.content -->
   </div>
   
-	<?php include_once('../4footer.php');  ?>
+	<?php include_once('4footer.php');  ?>
 
-	<?php include_once('../2java.php');  ?>
+	<?php include_once('2java.php');  ?>
 </div>
 </body>
 </html>

@@ -72,7 +72,7 @@
                     $campo17= $data[16];
                     $campo18= $data[17];
                     $campo19= $data[18];
-                    $campo20= $data[29];
+                    $campo20= $data[19];
                     $campo21= $data[20];
                     $campo22= $data[21];
                     $campo23= $data[22];
@@ -82,6 +82,7 @@
                     $campo27= $data[26];
                     $campo28= $data[27];
                     $campo29= $data[28];
+                    
                     
 
                     $sql = "INSERT INTO antina  (fecha,abonado,contrato,nombre_del_abonado,tdoc,documento,domicilio,detalle_zona,codigo_postal,localidad,tel_normal_1,tel_normal_2,tel_normal_3,estado,decos1,fecha_asignado_desasignado,asignacion_gsc,deuda,fecinst,decos,tipo,smarts,correo_electronico,tec_ins,des_tec_ins,emp_ins,des_emp_ins,mot_baja,des_mot_baja) VALUES
