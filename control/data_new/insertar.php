@@ -17,8 +17,8 @@
 	}
 	function exportar($rut){
 		global $db, $cl1;
-		require('../../conectar/database.php');
-		require('../../modelo/data_new/listar.php');
+		require('../conectar/database.php');
+		require('../modelo/data_new/listar.php');
 		$_db = new $db();
 		$_cl1 = new $cl1();
 
@@ -53,79 +53,46 @@
                 {
                     
                     
-                    $data1 = $data[0];
-                	$data2 = $data[1];
-                    $data3 = $data[2];
-                    $data4= $data[3];
-                    $data5= $data[4];
-                    $data6= $data[6];
-                    $data7= $data[7];
-                    $data8= $data[8];
-                    $data9= $data[9];
-                    $data10= $data[10];
-                    $data11= $data[11];
-                    $data12= $data[12];
-                    $data13= $data[13];
-                    $data14= $data[14];
-                    $data15= $data[15];
-                    $data16= $data[16];
-                    $data17= $data[17];
-                    $data18= $data[18];
-                    $data19= $data[19];
-                    $data20= $data[20];
-                    $data21= $data[21];
-                    $data22= $data[22];
-                    $data23= $data[23];
-                    $data24= $data[24];
-                    $data25= $data[25];
-                    $data26= $data[26];
-                    $data27= $data[27];
-                    $data28= $data[28];
-                    $data29= $data[29];
+                    $campo1 = $data[0];
+                	$campo2 = $data[1];
+                    $campo3 = $data[2];
+                    $campo4= $data[3];
+                    $campo5= $data[4];
+                    $campo6= $data[5];
+                    $campo7= $data[6];
+                    $campo8= $data[7];
+                    $campo9= $data[8];
+                    $campo10= $data[9];
+                    $campo11= $data[10];
+                    $campo12= $data[11];
+                    $campo13= $data[12];
+                    $campo14= $data[13];
+                    $campo15= $data[14];
+                    $campo16= $data[15];
+                    $campo17= $data[16];
+                    $campo18= $data[17];
+                    $campo19= $data[18];
+                    $campo20= $data[29];
+                    $campo21= $data[20];
+                    $campo22= $data[21];
+                    $campo23= $data[22];
+                    $campo24= $data[23];
+                    $campo25= $data[24];
+                    $campo26= $data[25];
+                    $campo27= $data[26];
+                    $campo28= $data[27];
+                    $campo29= $data[28];
                     
 
-                    $sql = "INSERT INTO antina  (fecha,
-                    abonado,
-                    contrato,
-                    nombre_del_abonado,
-                    tdoc,
-                    documento,
-                    domicilio,
-                    detalle_zona,
-                    codigo_postal,
-                    localidad,
-                    tel_normal_1,
-                    tel_normal_2,
-                    tel_normal_3,
-                    estado,
-                    decos1,
-                    fecha_asignado_desasignado,
-                    asignacion_gsc,
-                    deuda,
-                    fecinst,
-                    decos,
-                    tipo,
-                    smarts,
-                    correo_electronico,
-                    tec_ins,
-                    des_tec_ins,
-                    emp_ins,
-                    des_emp_ins,
-                    mot_baja,
-                    des_mot_baja,
-                    ) VALUES
-                     ('".$dato1."', '".$dato2."', '".$dato3."', '".$dato4."', '".$dato5."', '".$dato6."'
-                     , '".$dato7."', '".$dato8."', '".$dato9."', '".$dato10."', '".$dato11."', '".$dato12."', '".$dato13."'
-                     , '".$dato14."', '".$dato15."', '".$dato16."', '".$dato17."', '".$dato18."', '".$dato19."', '".$dato20."'
-                     , '".$dato21."', '".$dato22."', '".$dato23."', '".$dato24."', '".$dato25."', '".$dato26."', '".$dato27."',
-                     , '".$dato28."', '".$dato29."') ;";
+                    $sql = "INSERT INTO antina  (fecha,abonado,contrato,nombre_del_abonado,tdoc,documento,domicilio,detalle_zona,codigo_postal,localidad,tel_normal_1,tel_normal_2,tel_normal_3,estado,decos1,fecha_asignado_desasignado,asignacion_gsc,deuda,fecinst,decos,tipo,smarts,correo_electronico,tec_ins,des_tec_ins,emp_ins,des_emp_ins,mot_baja,des_mot_baja) VALUES
+                     ('$campo1', '$campo2', '$campo3', '$campo4', '$campo5','$campo6', '$campo7', '$campo8','$campo9', '$campo10', '$campo11', '$campo12', '$campo13', '$campo14', '$campo15', '$campo16', '$campo17', '$campo18', '$campo19', '$campo20', '$campo21', '$campo22', '$campo23', '$campo24', '$campo25', '$campo26', '$campo27', '$campo28', '$campo29') ;";
                     mysqli_query(conect01(),$sql);
                     $row++;
                 }
                 //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
                 fclose($handle);
                 $_SESSION['stat'] = "import";
-                header("Location: ../../vistas/data_new/index.php");
+                header("Location:../../vistas/data_new/index.php");
                 exit();
              }
              else

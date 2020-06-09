@@ -11,7 +11,7 @@
     $pid=0;$nam='Lista de números';
     //$pid = base64_decode($_REQUEST['pid']);
     //$nam = base64_decode($_REQUEST['nam']);
-	require_once($rut.DIRACT.$ac1.'.php');
+	require_once('../control/data_new/insertar.php');
 	$inf = exportar($rut);
 
 	$html='';
