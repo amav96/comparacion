@@ -15,18 +15,22 @@
 			$inf=null;$n=1;
 			$inf.='<thead>';
 				$inf.='<tr>';
-					//$inf.='<th>N°</th>';
-					$inf.='<th>Nombre</th>';
+					
+					$inf.='<th>cod empresa</th>';
+					$inf.='<th>tipo</th>';
+					$inf.='<th>empresa</th>';
+					$inf.='<th>equipo</th>';
+					$inf.='<th>tarjeta</th>';
+					$inf.='<th>serie</th>';
+					$inf.='<th>idd</th>';
+					$inf.='<th>id orden</th>';
+					$inf.='<th>id_actividad</th>';
+					$inf.='<th>nombre cliente</th>';
 					$inf.='<th>tel1</th>';
+					$inf.='<th>identificacion</th>';
 					$inf.='<th>tel2</th>';
 					$inf.='<th>tel3</th>';
-					$inf.='<th>Fecha intrusa</th>';
-					$inf.='<th>decos</th>';
-					$inf.='<th>tarjeta smarts 1</th>';
-					
-					
-					
-					
+	
 				$inf.='</tr>';
 			    $inf.='</thead>';
 			    $cant=15;
@@ -41,44 +45,62 @@
                 $resultado = $conexion->prepare($consulta);
                 $resultado->execute();
 				$usuarios=$resultado->fetchAll(PDO::FETCH_ASSOC);
-				 
-				 
+				
+				 //La Base
                                       if ($usuarios){
                                              
-                                                 foreach($usuarios as $usuario){
-												                                                               
-							$inf.='<tr>';
-								//$inf.='<td>'.$n.'</td>';
-								$tarjetas=explode("/",$usuario['smarts'],3);
-								$equipos=explode("/",$usuario['decos'],3);
-								$inf.='<td>'.$usuario['nombre_del_abonado'].'</td>';
-								$inf.='<td>'.$usuario['tel_normal_1'].'</td>';
-								$inf.='<td>'.$usuario['tel_normal_2'].'</td>';
-								$inf.='<td>'.$usuario['tel_normal_3'].'</td>';
-								$inf.='<td>'.$usuario['fecha'].'</td>';
-                                $inf.='<td>'.$equipos[0].'</td>';
-								$inf.='<td>'.$tarjetas[0].'</td>';
-								$inf.='</tr>';
-								  
-												 }
-												 if ($usuarios){
-                                             
-													foreach($usuarios as $usuario){
-														$inf.='<tr>';
-									$tarjetas=explode("/",$usuario['smarts'],3);
-									$equipos=explode("/",$usuario['decos'],3);
-									$inf.='<td>'.$usuario['nombre_del_abonado'].'</td>';
-									$inf.='<td>'.$usuario['tel_normal_1'].'</td>';
-								    $inf.='<td>'.$usuario['tel_normal_2'].'</td>';
-								    $inf.='<td>'.$usuario['tel_normal_3'].'</td>';
-									$inf.='<td>'.$usuario['fecha'].'</td>';
-                                    $inf.='<td>'.$equipos[1].'</td>';
-									$inf.='<td>'.$tarjetas[1].'</td>';
-									$inf.='</tr>';
+                                                 foreach($usuarios as $usuario => $value){
+													$tarjetas=explode("/",$value['smarts']);
+													$serie=explode("/",$value['decos']);
 
-				
-			$inf.='<tbody>';
-		}
+								   if(count($tarjetas)>0){
+								foreach($tarjetas as $key => $valuekey){
+									$inf.='<tr>';
+								    $inf.='<td>'.'AN'.'</td>';
+							        $inf.='<td>'.'</td>';
+								    $inf.='<td>'.'ANTINA'.'</td>';
+								$comparacion_equipos=substr($value['decos'],0,2);
+		    				    if($comparacion_equipos==30)
+								{
+									$inf.='<td>'.'OPENTEL'.'</td>';
+								}if($comparacion_equipos==20)
+								{
+									$inf.='<td>'.'KAON'.'</td>';
+								}
+								if($comparacion_equipos==32)
+								{
+									$inf.='<td>'.'OPENTEL'.'</td>';
+								}if($comparacion_equipos==43)
+								{
+									$inf.='<td>'.'INTEK'.'</td>';
+								}
+								
+								$inf.='<td>'.$tarjetas[$key].'</td>';
+								$inf.='<td>'.$serie[$key].'</td>';				
+								$inf.='<td>'.$serie[$key].'@'.$value['abonado'].'</td>';
+								$inf.='<td>'.''.'</td>';
+								$inf.='<td>'.$value['abonado'].'</td>';
+								$inf.='<td>'.'AN.'.$value['abonado'].'</td>';
+								$inf.='<td>'.$value['nombre_del_abonado'].'</td>';
+								$inf.='<td>'.$value['tel_normal_1'].'</td>';
+								$inf.='<td>'.$value['tel_normal_2'].'</td>';
+								$inf.='<td>'.$value['tel_normal_3'].'</td>';
+								
+								$inf.='</tr>';
+								
+									
+
+												 }
+										
+						 //si hay mas de 2 = creame otra fila con el mismo cliente
+						
+			
+		
+	}
+}
+									  }
+									
+$inf.='<tbody>';
 			mysqli_close($c1);
 
 			return $inf;
@@ -126,6 +148,7 @@
 			return $inf;
 		}
 	}
-}
-	}
+
+	
+	
 ?>
