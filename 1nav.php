@@ -153,7 +153,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="<?= URL; ?>" class="nav-link active">
+            <a href="http://localhost/comparacion/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Inicio
@@ -162,32 +162,250 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="vistas/data_new/index.php" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Administración
-                <span class="right badge badge-danger">Gestión</span>
-              </p>
-            </a>
+                <a href="#" class="nav-link">
+                   <i class="nav-icon fas fa-th"></i>
+                   <p>
+                     Administración
+                     <span class="right badge"></span>
+                        </p>
+                </a>
           </li>
           
           
-          <!--<li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Forms
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>General Elements</p>
-                </a>
-              </li>
-              <li class="nav-item">
+                  <li class="nav-item has-treeview">
+                     <a href="#" class="nav-link">
+                       <i class="nav-icon fas fa-book"></i>
+                        <p>
+                         Procesar Bases
+                       <i class="fas fa-angle-left right"></i>
+                        </p>
+                     </a>
+                          <ul class="nav nav-treeview">
+                             <li class="nav-item has-treeview">
+                               <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-edit"></i>
+                                   <p> Antina  
+                                     <i class="fas fa-angle-left right"></i>
+                                  </p>
+                               </a>
+                             
+            
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="#" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Antina</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="#" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Antina Prepago</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="#" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Antina Internet</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                                   </li>
+       
+                          </ul>
+                          
+                                      <ul class="nav nav-treeview">
+                                              <li class="nav-item has-treeview">
+                                                       <a href="#"      class="nav-link">
+                                                         <i class="nav-icon fas fa-edit"></i>
+                                                          <p> Antina Sin Provincia 
+                                                           <i class="fas fa-angle-left right"></i>
+                                                          </p>
+                                                        </a>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="http://localhost/comparacion/vistas/data_new/index.php" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Antina</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="#" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Antina Prepago</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="#" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Antina Internet</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                </li>
+                                      </ul>    
+                                      <ul class="nav nav-treeview">
+                                              <li class="nav-item has-treeview">
+                                                       <a href="#"      class="nav-link">
+                                                         <i class="nav-icon fas fa-edit"></i>
+                                                          <p> Directv
+                                                           <i class="fas fa-angle-left right"></i>
+                                                          </p>
+                                                        </a>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="#" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Directv</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                </li>
+                                      </ul>               
+                              
+                               </li>
+                               <li class="nav-item has-treeview">
+                     <a href="#" class="nav-link">
+                       <i class="nav-icon fas fa-book"></i>
+                        <p>
+                         Ingresar Bases
+                       <i class="fas fa-angle-left right"></i>
+                        </p>
+                     </a>
+                          <ul class="nav nav-treeview">
+                             <li class="nav-item has-treeview">
+                               <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-edit"></i>
+                                   <p> Antina  
+                                     <i class="fas fa-angle-left right"></i>
+                                  </p>
+                               </a>
+                             
+            
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="#" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Antina</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="#" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Antina Prepago</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="#" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Antina Internet</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                                   </li>
+       
+                          </ul>
+                          
+                                      <ul class="nav nav-treeview">
+                                              <li class="nav-item has-treeview">
+                                                       <a href="#"      class="nav-link">
+                                                         <i class="nav-icon fas fa-edit"></i>
+                                                          <p> Antina Sin Provincia 
+                                                           <i class="fas fa-angle-left right"></i>
+                                                          </p>
+                                                        </a>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="http://localhost/comparacion/vistas/data_new/index.php" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Antina</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="#" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Antina Prepago</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="#" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Antina Internet</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                </li>
+                                      </ul>    
+                                      <ul class="nav nav-treeview">
+                                              <li class="nav-item has-treeview">
+                                                       <a href="#"      class="nav-link">
+                                                         <i class="nav-icon fas fa-edit"></i>
+                                                          <p> Directv
+                                                           <i class="fas fa-angle-left right"></i>
+                                                          </p>
+                                                        </a>
+                                                      <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                          <a href="#" class="nav-link">
+                                                            <i class="far fa-circle nav-icon"></i>
+                                                             <p>Directv</p>
+                                                          </a>
+                                                        </li>
+                                                      </ul>
+                                                </li>
+                                      </ul>               
+                              
+                               </li>
+                  
+                  
+                  <!--<li class="nav-item has-treeview">
+                     <a href="#" class="nav-link">
+                       <i class="nav-icon fas fa-book"></i>
+                        <p>
+                         Procesar Directv
+                       <i class="fas fa-angle-left right"></i>
+                        </p>
+                     </a>
+                          <ul class="nav nav-treeview">
+                             <li class="nav-item has-treeview">
+                               <a href="http://localhost/comparacion/vistas/data_new/index.php" class="nav-link">
+                                 <i class="nav-icon fas fa-edit"></i>
+                                   <p> Antina  
+                                     <i class="fas fa-angle-left right"></i>
+                                  </p>
+                               </a>
+                             </li>
+            
+                                   <ul class="nav nav-treeview">
+                                     <li class="nav-item">
+                                       <a href="pages/forms/advanced.html" class="nav-link">
+                                         <i class="far fa-circle nav-icon"></i>
+                                           <p>Advanced Elements</p>
+                                       </a>
+                                     </li>
+                                   </ul>
+                          </ul>-->
+                  </li>
+              
+              
+             
+              <!--<li class="nav-item">
                 <a href="pages/forms/advanced.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Advanced Elements</p>
