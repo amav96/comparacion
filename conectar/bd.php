@@ -2,7 +2,7 @@
    class conectar{
         private $servidor="localhost";
         private $usuario="root";
-        private $bd="formulario";
+        private $bd="reality2_postalmarketing";
         private $password="";
         
 
