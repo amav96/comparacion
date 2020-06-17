@@ -10,7 +10,7 @@
 <html>
 <head>
 	<title> | Express</title>
-	<?php include_once('../../1stylesDAT.php');  ?>
+	<?php include_once('../../estilos/admindash/1stylesDAT.php');  ?>
   <?php
     $inf = null;
     require_once('../../control/data_new/insertar.php');
@@ -20,7 +20,7 @@
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed">
 <div class="wrapper">
 
-	<?php include_once('../../1nav.php');  ?>
+	<?php include_once('../../estilos/admindash/1nav.php');  ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -124,9 +124,9 @@
     </section>
   </div>
   
-	<?php include_once('../../4footer.php');  ?>
+	<?php include_once('../../estilos/admindash/4footer.php');  ?>
 
-	<?php include_once('../../2javaDAT.php');  ?>
+	<?php include_once('../../estilos/admindash/2javaDAT.php');  ?>
 
   <!-- Modal -->
   <div class="modal fade" id="importar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
