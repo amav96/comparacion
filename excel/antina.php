@@ -6,11 +6,11 @@
 	header("Content-Disposition: attachment; filename=".$name.date('His').".xls");
 
     $rut='../';
-    require($rut.'const.php');
+    require('../control/adm_prod/const.php');
     
     //$pid = base64_decode($_REQUEST['pid']);
     //$nam = base64_decode($_REQUEST['nam']);
-	require_once('../control/data_new/insertar.php');
+	require_once('../control/adm_prod/insertar.php');
 	$inf = exportar($rut);
 $html='';
 	

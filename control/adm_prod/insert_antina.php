@@ -2,13 +2,13 @@
 <?php
     $db='database';
     $cl1='numeros'; //esta es la clase que LISTA los numeros
-    $di1='vistas/data_new/index.php/';
+    $di1='vistas/adm_prod/marco.php/';
     $di2='numeros/detalle.php';
 
     function index($rut){
         global $db, $cl1;
         require('../../conectar/database.php');
-        require('../../modelo/data_new/listar.php');
+        require('../../model/adm_prod/listar.php');
         $_db = new $db();
         $_cl1 = new $cl1();
 
@@ -19,7 +19,7 @@
     function exportar($rut){
         global $db, $cl1;
         require('../conectar/database.php');
-        require('../modelo/data_new/listar.php');
+        require('../model/adm_prod/listar.php');
         $_db = new $db();
         $_cl1 = new $cl1();
 
@@ -30,7 +30,7 @@
 
     if (isset($_REQUEST['importar'])) {
         session_start();
-        require('../../const.php');
+        require('../../control/adm_prod/const.php');
         include('../../conectar/funct_conc.php');
 
         if (isset($_POST['importar'])) {
@@ -51,22 +51,55 @@
                 $filename = $_FILES['sel_file']['tmp_name'];
                 $handle = fopen($filename, "r");
         // la cantidad del bloque *- prueba con un archivo de 50 lineas y prueba colocando 10 a ver si todo va como quieres. 
-                    $qtyToInsert =5;
+                    $qtyToInsert =1500;
     $totals = 0;
     // block lo uso para contar cuantos tengo en el bloque actual 
     $block = 0;
     $sqlInsert = "INSERT INTO antina (fecha,abonado,contrato,nombre_del_abonado,tdoc,documento,domicilio,detalle_zona,codigo_postal,localidad,tel_normal_1,tel_normal_2,tel_normal_3,estado,decos1,fecha_asignado_desasignado,asignacion_gsc,deuda,fecinst,decos,tipo,smarts,correo_electronico,tec_ins,des_tec_ins,emp_ins,des_emp_ins,mot_baja,des_mot_baja) VALUES "; 
      
+    $insertNumber = 0; 
+    $entries = 0;
                 while (($entrie = fgetcsv($handle,1000,";")) !== FALSE)
                 {
                     
-    
+    //echo json_encode($entrie)."<br><br>";                   
+    $entries++;
         // si no es la primera recuerda agregar una coma
         if($block != 0){
             $sqlInsert .=',';
         } 
         //agregas nueva linea
-        $sqlInsert.="( '".$entrie[0]."','".$entrie[1]."', '".$entrie[2]."', '".$entrie[3]."', '".$entrie[4]."', '".$entrie[5]."', '".$entrie[6]."', '".$entrie[7]."', '".$entrie[8]."', '".$entrie[9]."', '".$entrie[10]."', '".$entrie[11]."', '".$entrie[12]."', '".$entrie[13]."', '".$entrie[14]."', '".$entrie[15]."', '".$entrie[16]."', '".$entrie[17]."', '".$entrie[18]."', '".$entrie[19]."', '".$entrie[20]."', '".$entrie[21]."', '".$entrie[22]."', '".$entrie[23]."', '".$entrie[24]."', '".$entrie[25]."', '".$entrie[26]."', '".$entrie[27]."', '".$entrie[28]."') ";
+        $sqlInsert.="( '".
+        clean($entrie[0])
+        ."', '".clean($entrie[1])
+        ."', '".clean($entrie[2])
+        ."', '".clean($entrie[3])
+        ."', '".clean($entrie[4])
+        ."', '".clean($entrie[5])
+        ."', '".clean($entrie[6])
+        ."', '".clean($entrie[7])
+        ."', '".clean($entrie[8])
+        ."', '".clean($entrie[9])
+        ."', '".clean($entrie[10])
+        ."', '".clean($entrie[11])
+        ."', '".clean($entrie[12])
+        ."', '".clean($entrie[13])
+        ."', '".clean($entrie[14])
+        ."', '".clean($entrie[15])
+        ."', '".clean($entrie[16])
+        ."', '".clean($entrie[17])
+        ."', '".clean($entrie[18])
+        ."', '".clean($entrie[19])
+        ."', '".clean($entrie[20])
+        ."', '".clean($entrie[21])
+        ."', '".clean($entrie[22])
+        ."', '".clean($entrie[23])
+        ."', '".clean($entrie[24])
+        ."', '".clean($entrie[25])
+        ."', '".clean($entrie[26])
+        ."', '".clean($entrie[27])
+        ."', '".clean($entrie[28])
+        ."') ";
         
         $block++;
         if($block >=$qtyToInsert){
@@ -78,16 +111,22 @@
         }
         // esto solo es el total de todos 
         $totals++;
-    
-
-    // al salir si hay cosas pendientes ejecutas la ultima - no lo olvides
-    
+        
+     }
+     
+     // al salir si hay cosas pendientes ejecutas la ultima - no lo olvides
+    if($block > 0){
+        mysqli_query(conect01(),$sqlInsert);
+        //echo $sqlInsert;
+        $insertNumber++;
+    }
+    echo "<br><br>Bloques insertados ".$insertNumber." Lineas ".$entries;
                    
                 }
                 //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
                 fclose($handle);
                 $_SESSION['stat'] = "import";
-                header("Location:../../vistas/data_new/index.php");
+                header("Location:../../vistas/adm_prod/marco.php");
                 exit();
                 
              }
@@ -96,11 +135,12 @@
                 //si aparece esto es posible que el archivo no tenga el formato adecuado, inclusive cuando es cvs, revisarlo para             
                 //ver si esta separado por " ; "
                 $_SESSION['stat'] = "noimport";
-                header("Location:../../vistas/data_new/index.php");
+                header("Location:../../vistas/adm_prod/marco.php");
                 exit();
              }
-        }
+        
         exit();
     }
+    
 
 ?>

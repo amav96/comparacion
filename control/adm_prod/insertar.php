@@ -2,13 +2,13 @@
 <?php
     $db='database';
     $cl1='numeros'; //esta es la clase que LISTA los numeros
-    $di1='vistas/data_new/index.php/';
+    $di1='vistas/adm_prod/marco.php/';
     $di2='numeros/detalle.php';
 
     function index($rut){
         global $db, $cl1;
         require('../../conectar/database.php');
-        require('../../modelo/data_new/listar.php');
+        require('../../model/adm_prod/listar.php');
         $_db = new $db();
         $_cl1 = new $cl1();
 
@@ -26,7 +26,7 @@
     function exportar($rut){
         global $db, $cl1;
         require('../conectar/database.php');
-        require('../modelo/data_new/listar.php');
+        require('../model/adm_prod/listar.php');
         $_db = new $db();
         $_cl1 = new $cl1();
 
@@ -37,7 +37,7 @@
 
     if (isset($_REQUEST['importar'])) {
         session_start();
-        require('../../const.php');
+        require('../../control/adm_prod/const.php');
         include('../../conectar/funct_conc.php');
 
         if (isset($_POST['importar'])) {
@@ -64,7 +64,7 @@
     $totals = 0;
     // block lo uso para contar cuantos tengo en el bloque actual 
     $block = 0;
-    $sqlInsert = "INSERT INTO express (id,cod_empresa,tipo,empresa,equipo,tarjeta,serie,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES "; 
+    $sqlInsert = "INSERT INTO nueva (id,cod_empresa,tipo,empresa,equipo,tarjeta,serie,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES "; 
     
     
     
@@ -151,7 +151,7 @@
             // reinicias block 
             $block = 0;
             // reinicias sentencia sql
-            $sqlInsert = "INSERT INTO express (id,cod_empresa,tipo,empresa,equipo,tarjeta,serie,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES ";            
+            $sqlInsert = "INSERT INTO nueva (id,cod_empresa,tipo,empresa,equipo,tarjeta,serie,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES ";            
         }
         // esto solo es el total de todos 
         $totals++;
@@ -169,7 +169,7 @@
                 //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
                 fclose($handle);
                 $_SESSION['stat'] = "import";
-                header("Location:../../vistas/data_new/index.php");
+                header("Location:../../vistas/adm_prod/marco.php");
                 exit();
                 
              }
@@ -178,7 +178,7 @@
                 //si aparece esto es posible que el archivo no tenga el formato adecuado, inclusive cuando es cvs, revisarlo para             
                 //ver si esta separado por " ; "
                 $_SESSION['stat'] = "noimport";
-                header("Location:../../vistas/data_new/index.php");
+                header("Location:../../vistas/adm_prod/marco.php");
                 exit();
              }
         

@@ -1,19 +1,19 @@
 <?php
 	session_start();
 	
-	require_once('const.php');
+	require_once('../../control/adm_prod/const.php');
 	$pagina='Inicio';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title><?= $pagina.TIT; ?></title>
-	<?php include_once('estilos/admindash/1styles.php');  ?>
+	<?php include_once('../../estilos/admindash/1styles.php');  ?>
 </head>
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed">
 <div class="wrapper">
 
-	<?php include_once('estilos/admindash/1nav.php');  ?>
+	<?php include_once('../../vistas/adm_prod/1nav.php');  ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -626,9 +626,9 @@
     <!-- /.content -->
   </div>
   
-	<?php include_once('estilos/admindash/4footer.php');  ?>
+	<?php include_once('../../estilos/admindash/4footer.php');  ?>
 
-	<?php include_once('estilos/admindash/2java.php');  ?>
+	<?php include_once('../../estilos/admindash/2java.php');  ?>
 </div>
 </body>
 </html>

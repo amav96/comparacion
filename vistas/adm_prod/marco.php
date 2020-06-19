@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$rut='../';
-	require_once('../../const.php');
+	require_once('../../control/adm_prod/const.php');
   $direc='numeros.php';
   $pagina='Números';
   
@@ -13,14 +13,14 @@
 	<?php include_once('../../estilos/admindash/1stylesDAT.php');  ?>
   <?php
     $inf = null;
-    require_once('../../control/data_new/insertar.php');
+    require_once('../../control/adm_prod/insertar.php');
     $inf = index($rut);
   ?>
 </head>
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed layout-navbar-fixed">
 <div class="wrapper">
 
-	<?php include_once('../../estilos/admindash/1nav.php');  ?>
+	<?php include_once('../../vistas/adm_prod/1nav.php');  ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 text-right">
                     <div class="breadcomb-report">
-                      <?php include_once('../../modelo/data_new/export.php'); ?>
+                      <?php include_once('../../model/adm_prod/export.php'); ?>
                         <div class="btn-group">
                             <button type="button" class="btn btn-warning"><i class="fas fa-file-import"></i> Importar</button>
                             <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -131,7 +131,7 @@
   <!-- Modal -->
   <div class="modal fade" id="importar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <form method="post" enctype="multipart/form-data" action="../../control/data_new/insertar.php">
+      <form method="post" enctype="multipart/form-data" action="../../control/adm_prod/insertar.php">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Importar Números</h5>
