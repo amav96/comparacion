@@ -97,7 +97,7 @@ include_once ('../../conectar/c_Conectar.php');
 												$variable=str_replace('15','',$value['tel_normal_1']);
 												$primeros=substr($variable,0,4);
 												
-			$consulta_comparativa ="SELECT empresa FROM referencia_completa WHERE sin_15='$variable' OR sin_15='1115$variable'";
+			$consulta_comparativa ="SELECT empresa FROM referencia_completa WHERE sin_15='$primeros' OR sin_15='1115$primeros'";
 								echo "$consulta_comparativa";
 								echo "<br>";
                                 $resultado_comparativa = $conexion->prepare($consulta_comparativa);
