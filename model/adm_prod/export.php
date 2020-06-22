@@ -7,6 +7,6 @@
                             <div class="dropdown-menu" role="menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(68px, 38px, 0px);">
                                 <!--<a class="dropdown-item" href="<?= $direc; ?>">PDF <i class="fas fa-file-pdf"></i></a>
                                 <div class="dropdown-divider"></div>-->
-                                <a class="dropdown-item" href="../../excel/antina.php"><i class="fas fa-file-excel"></i></a>
+                                <a class="dropdown-item" href="../../excel/adm_prod/antina.php"><i class="fas fa-file-excel"></i></a>
                             </div>
                         </div>

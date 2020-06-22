@@ -228,7 +228,7 @@
                                                         </a>
                                                       <ul class="nav nav-treeview">
                                                         <li class="nav-item">
-                                                          <a href="http://localhost/comparacion/vistas/adm_prod/marco.php" class="nav-link">
+                                                          <a href="http://localhost/comparacion/vistas/adm_prod/marco_antina_sin_prov.php" class="nav-link">
                                                             <i class="far fa-circle nav-icon"></i>
                                                              <p>Antina</p>
                                                           </a>
@@ -280,6 +280,15 @@
                        <i class="fas fa-angle-left right"></i>
                         </p>
                      </a>
+                     <ul class="nav nav-treeview">
+                             <li class="nav-item has-treeview">
+                               <a href="http://localhost/comparacion/vistas/adm_prod/marco_base_original.php" class="nav-link">
+                                 <i class="nav-icon fas fa-edit"></i>
+                                   <p> Base Original
+                                     <i class="fas fa-angle-left right"></i>
+                                  </p>
+                               </a>
+                               </ul>
                           <ul class="nav nav-treeview">
                              <li class="nav-item has-treeview">
                                <a href="#" class="nav-link">
@@ -328,7 +337,7 @@
                                                         </a>
                                                       <ul class="nav nav-treeview">
                                                         <li class="nav-item">
-                                                          <a href="http://localhost/comparacion/vistas/adm_prod/marco.php" class="nav-link">
+                                                          <a href="http://localhost/comparacion/vistas/adm_prod/marco_antina_sin_prov.php" class="nav-link">
                                                             <i class="far fa-circle nav-icon"></i>
                                                              <p>Antina</p>
                                                           </a>

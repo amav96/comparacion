@@ -32,6 +32,9 @@
 					$inf.='<th>codigo postal</th>';
 					$inf.='<th>provincia</th>';
 					$inf.='<th>fecha creacion</th>';
+					$inf.='<th>telefono 1</th>';
+					$inf.='<th>telefono 2</th>';
+					$inf.='<th>telefono 3</th>';
 					
 	
 				$inf.='</tr>';
@@ -48,8 +51,7 @@
                 $resultado = $conexion->prepare($consulta);
                 $resultado->execute();
 				$usuarios=$resultado->fetchAll(PDO::FETCH_ASSOC);
-				
-				 //La Base
+	
                                       if ($usuarios){
                                              
                                         foreach($usuarios as $usuario => $value){
@@ -88,6 +90,9 @@
 											$inf.='<td>'.$value['codigo_postal'].'</td>';
 											$inf.='<td>'.''.'</td>';
 											$inf.='<td>'.$value['fecha'].'</td>';
+											$inf.='<td>'.$value['tel_normal_1'].'</td>';
+											$inf.='<td>'.$value['tel_normal_2'].'</td>';
+											$inf.='<td>'.$value['tel_normal_3'].'</td>';
 								            
 								
 								        $inf.='</tr>';

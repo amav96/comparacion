@@ -13,7 +13,7 @@
 	<?php include_once('../../estilos/admindash/1stylesDAT.php');  ?>
   <?php
     $inf = null;
-    require_once('../../control/adm_prod/insertar.php');
+    require_once('../../control/adm_prod/insertar_antina_sin_prov.php');
     $inf = index($rut);
   ?>
 </head>
@@ -131,7 +131,7 @@
   <!-- Modal -->
   <div class="modal fade" id="importar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <form method="post" enctype="multipart/form-data" action="../../control/adm_prod/insertar.php">
+      <form method="post" enctype="multipart/form-data" action="../../control/adm_prod/insertar_antina_sin_prov.php">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Importar Números</h5>
