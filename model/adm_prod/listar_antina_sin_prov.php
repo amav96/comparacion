@@ -93,34 +93,89 @@ include_once ('../../conectar/c_Conectar.php');
 											
 											$buscando=substr($numeros,0,2);
 
-											if($buscando==='15'){
-												$variable=str_replace('15','',$value['tel_normal_1']);
-												$primeros=substr($variable,0,4);
-												
-			$consulta_comparativa ="SELECT empresa FROM referencia_completa WHERE sin_15='$primeros' OR sin_15='1115$primeros'";
-								echo "$consulta_comparativa";
-								echo "<br>";
+											$separados=$buscando;
+
+								if($buscando==='15' || $buscando==='11'){
+								$variable=str_replace($separados,'',$value['tel_normal_1']);
+								$primeros=substr($variable,0,4);
+								// echo "los primeros 2 de $numeros es igual a 15 o 11?? haz esto -> quita el 15 y 11  -> $variable y toma los primeros 4-> $primeros";
+								// echo "<br>";
+
+								$consulta_comparativa ="SELECT empresa,reemplazar_por FROM referencia_completa WHERE sin_15 like '$primeros%' OR sin_15='1115$primeros' limit 1";
+                                //echo "consulta con 15 o 11";
+								//echo "$consulta_comparativa";
+								//echo "<br>";
+
                                 $resultado_comparativa = $conexion->prepare($consulta_comparativa);
                                 $resultado_comparativa->execute();
 								$usuarios_comparativa=$resultado_comparativa->fetchAll(PDO::FETCH_ASSOC);
 											
-								
-								            foreach($usuarios_comparativa as $buscar_numero){
-											$inf.='<td>'.$buscar_numero['empresa'].'</td>';
+								 foreach($usuarios_comparativa as $buscar_numero){
+											$inf.='<td>'.$buscar_numero['reemplazar_por'].'</td>';
+                                           // echo "este es el resultado";
+											//echo json_encode($buscar_numero);
+											//echo "<br>";
 										
 									
 									
-					$inf.='</tr>';
-				}
-				}
-			
+					                        $inf.='</tr>';
+				                                  
 				
-			}
+										 //tercer iff sie igual a 15 o 11
+										        if($numeros){ 
+													
+													$numeros=$value['tel_normal_1'];
 
-				}
+													$buscar_sin=substr($numeros,0,4);
 
-	   }
-   }
+													$separado_sin=$buscar_sin;
+
+													echo "estos son los diferentes -> $separado_sin";
+													echo "<br>";
+
+													$consulta_comparativa_sin ="SELECT empresa,reemplazar_por FROM referencia_completa WHERE sin_15 like '$separado_sin%' OR sin_15='1115$separado_sin' limit 1";
+
+													echo "consulta sin 11 o 15";
+													echo "<br>";
+								                   echo "$consulta_comparativa_sin";
+												  
+												   
+												   $resultado_comparativa_sin = $conexion->prepare($consulta_comparativa_sin);
+                                $resultado_comparativa_sin->execute();
+								$usuarios_comparativa_sin=$resultado_comparativa_sin->fetchAll(PDO::FETCH_ASSOC);
+											
+								 foreach($usuarios_comparativa_sin as $buscar_numero_sin){
+											$inf.='<td>'.$buscar_numero_sin['reemplazar_por'].'</td>';
+											echo "este es el resultado de los que no tienen 15 o 11";
+											echo "<br>";
+											echo json_encode($buscar_numero_sin);
+											
+										
+									
+									
+					                        $inf.='</tr>';
+				                                  } //para foreach
+
+													
+
+
+													}
+												} //para foreach
+											} //ante penultimo if
+											else {
+												
+											}		
+				            }//segundo foreach tarjetas >key 
+
+				                           
+                       
+
+					   }//seguno if count
+
+			
+					} //primer foreach
+				}//primer if 
+			
 	
 $inf.='<tbody>';
 			mysqli_close($c1);
