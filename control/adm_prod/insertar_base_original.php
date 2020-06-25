@@ -182,7 +182,7 @@
                 //cerramos la lectura del archivo "abrir archivo" con un "cerrar archivo"
                 fclose($handle);
                 $_SESSION['stat'] = "import";
-                header("Location:../../vistas/adm_prod/marco.php");
+                header("Location:../../vistas/adm_prod/marco_base_original.php");
                 exit();
                 
              }
@@ -191,7 +191,7 @@
                 //si aparece esto es posible que el archivo no tenga el formato adecuado, inclusive cuando es cvs, revisarlo para             
                 //ver si esta separado por " ; "
                 $_SESSION['stat'] = "noimport";
-                header("Location:../../vistas/adm_prod/marco.php");
+                header("Location:../../vistas/adm_prod/marco_base_original.php");
                 exit();
              }
         

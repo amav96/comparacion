@@ -102,7 +102,7 @@ include_once ('../../conectar/c_Conectar.php');
 									//echo "$cadena";
 									//echo "<br>";
 									if($numeros != ''){
-											if ($cadena < 12){
+											if ($cadena <= 12){
 
 								if($buscando==='15' || $buscando==='11'){
 								//$variable=str_replace($separados,'',$value['tel_normal_1']);
@@ -113,7 +113,7 @@ include_once ('../../conectar/c_Conectar.php');
 								 //echo " toma los primeros 6-> $primeros";
 								 //echo "<br>";
 
-								$consulta_comparativa ="SELECT empresa,reemplazar_por FROM referencia_completa WHERE sin_15 like '%$primeros%' limit 1";
+								$consulta_comparativa ="SELECT empresa,reemplazar_por FROM referencia_completa WHERE sin_15 like '$primeros%' limit 1";
                                 //echo "consulta con 15 o 11--->";
 								//echo "$consulta_comparativa";
 								//echo "<br>";
@@ -151,7 +151,7 @@ include_once ('../../conectar/c_Conectar.php');
 										//echo "$numeros_sin";
 										//echo "<br>";
 										
-										$agarro_4=substr($para_comparar,0,4);
+										$agarro_4=substr($para_comparar,0,6);
 
 											
 										//echo "LOS DIFERENTES A 15 O 11 ->";	
@@ -161,7 +161,7 @@ include_once ('../../conectar/c_Conectar.php');
 									//echo "agarro los 4 primeros -> $agarro_4";
 									//echo "<br>";
 
-									$consulta_comparativa_sin ="SELECT empresa,reemplazar_por FROM referencia_completa WHERE sin_15 like '$agarro_4%' OR sin_15='1115$agarro_4' limit 1";
+									$consulta_comparativa_sin ="SELECT empresa,reemplazar_por FROM referencia_completa WHERE sin_15 like '$agarro_4%'  limit 1 ";
 
 									//echo "consulta sin 11 o 15 ABAJO MEDIO";
 									//echo "<br>";
@@ -211,7 +211,7 @@ include_once ('../../conectar/c_Conectar.php');
                         echo "aca muestro todo--->$mostrar_todo";
 						echo "<br>";
 
-						$agrupar_mostrar_todo=substr($mostrar_todo,0,4);
+						$agrupar_mostrar_todo=substr($mostrar_todo,0,6);
 						echo "aca agrupo--->$agrupar_mostrar_todo";
 						echo "<br>";
 
