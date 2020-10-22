@@ -77,7 +77,7 @@
     $totals = 0;
     // block lo uso para contar cuantos tengo en el bloque actual 
     $block = 0;
-    $sqlInsert = "INSERT INTO express (id,cod_empresa,tipo,empresa,equipo,tarjeta,serie,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES "; 
+    $sqlInsert = "INSERT INTO express (id_local,cod_empresa,tipo,empresa,equipo,tarjeta,serie,cpu2,serie_base,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,telefono_fijo1,telefono_fijo2,telefono_fijo3,telefono_fijo4,telefono_fijo5,telefono_fijo6,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES "; 
     
     
     
@@ -153,6 +153,14 @@
         ."', '".clean($entrie[57])
         ."', '".clean($entrie[58])
         ."', '".clean($entrie[59])
+        ."', '".clean($entrie[60])
+        ."', '".clean($entrie[61])
+        ."', '".clean($entrie[62])
+        ."', '".clean($entrie[63])
+        ."', '".clean($entrie[64])
+        ."', '".clean($entrie[65])
+        ."', '".clean($entrie[66])
+        ."', '".clean($entrie[67])
         ."') ";
         
         $block++;
@@ -164,10 +172,13 @@
             // reinicias block 
             $block = 0;
             // reinicias sentencia sql
-            $sqlInsert = "INSERT INTO express (id,cod_empresa,tipo,empresa,equipo,tarjeta,serie,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES ";            
+            $sqlInsert = "INSERT INTO express (id_local,cod_empresa,tipo,empresa,equipo,tarjeta,serie,cpu2,serie_base,idd,id_orden,id_actividad,identificacion,nombre_cliente,direccion,localidad,codigo_postal,provincia,fecha_creacion,telefono1,telefono2,telefono_fijo1,telefono_fijo2,telefono_fijo3,telefono_fijo4,telefono_fijo5,telefono_fijo6,fecha_de_envio,cartera,baja,id_fecha_recolector,remito_rend,remito_cv,fecha_rend_cv,id_operador_ren,id_motivo_ren,master_box,id_operador,fecha,id_motivo,tabla_oper,MULTIPLES,cable_hdmi,cable_av,fuente,control_1,email_enviado,otros,remito_sub,fecha_remito_sub,fecha_asignado,id_recolector,operador,sub_asignado,ciclo,zona,fecha_premio,mes_base,R1,R2,R3,tipo_de_recupero,semanas,ano_semana,fecha_de_liquidacion,hist_pactados,latitude,longitude) VALUES ";            
         }
+      
         // esto solo es el total de todos 
         $totals++;
+
+     
     }
 
     // al salir si hay cosas pendientes ejecutas la ultima - no lo olvides
